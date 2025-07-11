@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Chapter 2 – C Programming II</title>
+    <link rel="stylesheet" href="web.css" />
+</head>
+<body>
+    <div class="newspaper-container">
+        <header class="newspaper-header">
+            <div class="header-content">
+                <div class="title-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="title-text">
+                    <h1>DAILY SCIENCE CHRONICLE</h1>
+                    <p>EST. 2023 | VOL. XII | ISSUE 02</p>
+                </div>
+                <div class="date">
+                    <p>TUESDAY, JULY 11, 2025</p>
+                    <p>COMPUTER SCIENCE EDITION</p>
+                </div>
+            </div>
+        </header>
+
+        <article id="chapter2" class="chapter active-chapter">
+            <header>
+                <h2>CHAPTER 2: C PROGRAMMING II</h2>
+                <div class="ribbon-nav">
+                    <ul>
+                        <li><a href="#functions">Functions</a></li>
+                        <li><a href="#categories">Function Categories</a></li>
+                        <li><a href="#storage">Storage Classes</a></li>
+                        <li><a href="#recursion">Recursion</a></li>
+                        <li><a href="#array">Passing Array</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <section id="functions" class="article-section">
+                <h3>1. Working with a Function</h3>
+                <p>A <strong>function</strong> in C is a block of code that performs a specific task. It promotes code reusability and modular programming.</p>
+
+                <h4>a. Define Function</h4>
+                <p>A function is a group of statements that together perform a task. C has built-in library functions and allows user-defined functions.</p>
+
+                <h4>b. Syntax of a Function</h4>
+<pre><code>return_type function_name(parameter_list) {
+    // body of the function
+}</code></pre>
+
+                <h4>c. Types of Functions</h4>
+                <ul>
+                    <li><strong>Library functions</strong>: Predefined in C standard libraries (e.g., <code>printf()</code>, <code>scanf()</code>).</li>
+                    <li><strong>User-defined functions</strong>: Written by the programmer to perform specific tasks.</li>
+                </ul>
+
+                <h4>d. Components of a Function</h4>
+                <ul>
+                    <li><strong>Function Prototype</strong>: Declaration before main.<br>
+                        Example: <code>int add(int, int);</code></li>
+                    <li><strong>Function Call</strong>: Used to invoke the function.<br>
+                        Example: <code>sum = add(4, 5);</code></li>
+                    <li><strong>Function Definition</strong>: Actual body of function.<br>
+<pre><code>int add(int a, int b) {
+    return a + b;
+}</code></pre></li>
+                    <li><strong>Return Type</strong>: Specifies the data type of the value returned.</li>
+                </ul>
+            </section>
+
+            <section id="categories" class="article-section">
+                <h3>2. Categories of Functions (with Example)</h3>
+
+                <h4>i. Function with return type but no arguments</h4>
+<pre><code>int getNumber() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    return n;
+}
+
+int main() {
+    int x = getNumber();
+    printf("You entered: %d", x);
+    return 0;
+}</code></pre>
+
+                <h4>ii. Function with return type with arguments</h4>
+<pre><code>int multiply(int a, int b) {
+    return a * b;
+}
+
+int main() {
+    int result = multiply(3, 4);
+    printf("Result: %d", result);
+    return 0;
+}</code></pre>
+
+                <h4>iii. Function with no return type with no arguments</h4>
+<pre><code>void greet() {
+    printf("Hello, User!");
+}
+
+int main() {
+    greet();
+    return 0;
+}</code></pre>
+
+                <h4>iv. Function with no return type with arguments</h4>
+<pre><code>void display(int num) {
+    printf("The number is: %d", num);
+}
+
+int main() {
+    display(10);
+    return 0;
+}</code></pre>
+            </section>
+
+            <section id="storage" class="article-section">
+                <h3>3. Storage Classes in C</h3>
+                <p>Storage class defines the scope, visibility, and lifetime of a variable.</p>
+
+                <ul>
+                    <li><strong>auto</strong> – Default for local variables.
+<pre><code>void show() {
+    auto int x = 5;
+    printf("%d", x);
+}</code></pre></li>
+
+                    <li><strong>extern</strong> – Used to declare global variables across files.
+<pre><code>extern int x; // declared in another file</code></pre></li>
+
+                    <li><strong>register</strong> – Requests storing variable in CPU register for speed.
+<pre><code>void fastCount() {
+    register int i;
+    for (i = 0; i < 100; i++) {}
+}</code></pre></li>
+
+                    <li><strong>static</strong> – Retains value between function calls.
+<pre><code>void counter() {
+    static int count = 0;
+    count++;
+    printf("%d", count);
+}</code></pre></li>
+                </ul>
+            </section>
+
+            <section id="recursion" class="article-section">
+                <h3>4. Recursive Function</h3>
+                <p>A recursive function calls itself to solve a smaller problem.</p>
+
+                <h4>Example: Factorial of a Number</h4>
+<pre><code>int factorial(int n) {
+    if (n == 0)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+int main() {
+    int fact = factorial(5);
+    printf("Factorial: %d", fact);
+    return 0;
+}</code></pre>
+            </section>
+
+            <section id="array" class="article-section">
+                <h3>5. Passing Array to a Function</h3>
+                <p>We can pass arrays to functions by specifying the array name.</p>
+
+                <h4>Example: Print Elements of Array</h4>
+<pre><code>void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+}
+
+int main() {
+    int nums[5] = {10, 20, 30, 40, 50};
+    printArray(nums, 5);
+    return 0;
+}</code></pre>
+            </section>
+        </article>
+    </div>
+</body>
+</html>
