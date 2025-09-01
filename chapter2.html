@@ -13,79 +13,103 @@
         <header class="newspaper-header">
             <div class="header-content">
                 <div class="title-icon">
-                    <i class="fas fa-network-wired"></i> <!-- Changed icon -->
+                    <i class="fas fa-network-wired"></i>
                 </div>
                 <div class="title-text">
                     <h1>DAILY SCIENCE CHRONICLE</h1>
-                    <p>EST. 2023 | VOL. XII | ISSUE 02</p> <!-- Updated issue number -->
+                    <p>EST. 2023 | VOL. XII | ISSUE 02</p>
                 </div>
                 <div class="date">
-                    <p>TUESDAY, JUNE 17, 2025</p> <!-- Updated date -->
+                    <p>TUESDAY, JUNE 17, 2025</p>
                     <p>COMPUTER SCIENCE EDITION</p>
                 </div>
             </div>
         </header>
 
-      <nav class="chapter-nav">
-    <ul>
-        <li><a href="chapter1.html">CHAPTER 1</a></li>
-        <li><a href="chapter2.html" class="active">CHAPTER 2</a></li>
-        <li><a href="chapter3.html">CHAPTER 3</a></li>
-        <li><a href="chapter4.html">CHAPTER 4</a></li>
-        <li><a href="chapter5.html">CHAPTER 5</a></li>
-    </ul>
-</nav>
-        <article id="chapter2" class="chapter active-chapter">
-            <header>
-                <h2>CHAPTER 2: C PROGRAMMING II</h2>
-                <div class="ribbon-nav">
+        <nav class="chapter-nav">
+            <ul>
+                <li><a href="chapter1.html">CHAPTER 1</a></li>
+                <li><a href="chapter2.html">CHAPTER 2</a></li>
+                <li><a href="chapter3.html">CHAPTER 3</a></li>
+                <li><a href="chapter4.html" class="active">CHAPTER 4</a></li>
+                <li><a href="chapter5.html">CHAPTER 5</a></li>
+            </ul>
+        </nav>
+
+        <div class="content-area">
+            <section class="chapter active-chapter">
+                <header>
+                    <h2>Unit 4: C Programming</h2>
+                </header>
+
+                <!-- Ribbon Navigation -->
+                <nav class="ribbon-nav">
                     <ul>
+                        <li><a href="#functions">Functions</a></li>
+                        <li><a href="#structure">Structure & Union</a></li>
+                        <li><a href="#pointers">Pointers</a></li>
+                        <li><a href="#file-handling">File Handling</a></li>
+                        <li><a href="#typedef">Typedef</a></li>
                         <li><a href="#functions">Functions</a></li>
                         <li><a href="#categories">Function Categories</a></li>
                         <li><a href="#storage">Storage Classes</a></li>
                         <li><a href="#recursion">Recursion</a></li>
                         <li><a href="#array">Passing Array</a></li>
+
                     </ul>
-                </div>
-            </header>
+                </nav>
 
-            <section id="functions" class="article-section">
-                <h3>1. Working with a Function</h3>
-                <p>A <strong>function</strong> in C is a block of code that performs a specific task. It promotes code reusability and modular programming.</p>
 
-                <h4>a. Define Function</h4>
-                <p>A function is a group of statements that together perform a task. C has built-in library functions and allows user-defined functions.</p>
 
-                <h4>b. Syntax of a Function</h4>
-<pre><code>return_type function_name(parameter_list) {
+
+
+
+                <section id="functions" class="article-section">
+                    <h3>1. Working with a Function</h3>
+                    <p>A <strong>function</strong> in C is a block of code that performs a specific task. It promotes
+                        code
+                        reusability and modular programming.</p>
+
+                    <h4>a. Define Function</h4>
+                    <p>A function is a group of statements that together perform a task. C has built-in library
+                        functions
+                        and allows user-defined functions.</p>
+
+                    <h4>b. Syntax of a Function</h4>
+                    <pre><code>return_type function_name(parameter_list) {
     // body of the function
 }</code></pre>
 
-                <h4>c. Types of Functions</h4>
-                <ul>
-                    <li><strong>Library functions</strong>: Predefined in C standard libraries (e.g., <code>printf()</code>, <code>scanf()</code>).</li>
-                    <li><strong>User-defined functions</strong>: Written by the programmer to perform specific tasks.</li>
-                </ul>
+                    <h4>c. Types of Functions</h4>
+                    <ul>
+                        <li><strong>Library functions</strong>: Predefined in C standard libraries (e.g.,
+                            <code>printf()</code>, <code>scanf()</code>).
+                        </li>
+                        <li><strong>User-defined functions</strong>: Written by the programmer to perform specific
+                            tasks.
+                        </li>
+                    </ul>
 
-                <h4>d. Components of a Function</h4>
-                <ul>
-                    <li><strong>Function Prototype</strong>: Declaration before main.<br>
-                        Example: <code>int add(int, int);</code></li>
-                    <li><strong>Function Call</strong>: Used to invoke the function.<br>
-                        Example: <code>sum = add(4, 5);</code></li>
-                    <li><strong>Function Definition</strong>: Actual body of function.<br>
-<pre><code>int add(int a, int b) {
+                    <h4>d. Components of a Function</h4>
+                    <ul>
+                        <li><strong>Function Prototype</strong>: Declaration before main.<br>
+                            Example: <code>int add(int, int);</code></li>
+                        <li><strong>Function Call</strong>: Used to invoke the function.<br>
+                            Example: <code>sum = add(4, 5);</code></li>
+                        <li><strong>Function Definition</strong>: Actual body of function.<br>
+                            <pre><code>int add(int a, int b) {
     return a + b;
-}</code></pre></li>
-                    <li><strong>Return Type</strong>: Specifies the data type of the value returned.</li>
-                </ul>
-            </section>
+}</code></pre>
+                        </li>
+                        <li><strong>Return Type</strong>: Specifies the data type of the value returned.</li>
+                    </ul>
+                </section>
 
-            <section id="categories" class="article-section">
-                <h3>2. Categories of Functions (with Example)</h3>
+                <section id="categories" class="article-section">
+                    <h3>2. Categories of Functions (with Example)</h3>
 
-                <h4>i. Function with return type but no arguments</h4>
-<pre><code>int getNumber() {
+                    <h4>i. Function with return type but no arguments</h4>
+                    <pre><code>int getNumber() {
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -98,8 +122,8 @@ int main() {
     return 0;
 }</code></pre>
 
-                <h4>ii. Function with return type with arguments</h4>
-<pre><code>int multiply(int a, int b) {
+                    <h4>ii. Function with return type with arguments</h4>
+                    <pre><code>int multiply(int a, int b) {
     return a * b;
 }
 
@@ -109,8 +133,8 @@ int main() {
     return 0;
 }</code></pre>
 
-                <h4>iii. Function with no return type with no arguments</h4>
-<pre><code>void greet() {
+                    <h4>iii. Function with no return type with no arguments</h4>
+                    <pre><code>void greet() {
     printf("Hello, User!");
 }
 
@@ -119,8 +143,8 @@ int main() {
     return 0;
 }</code></pre>
 
-                <h4>iv. Function with no return type with arguments</h4>
-<pre><code>void display(int num) {
+                    <h4>iv. Function with no return type with arguments</h4>
+                    <pre><code>void display(int num) {
     printf("The number is: %d", num);
 }
 
@@ -128,43 +152,47 @@ int main() {
     display(10);
     return 0;
 }</code></pre>
-            </section>
+                </section>
 
-            <section id="storage" class="article-section">
-                <h3>3. Storage Classes in C</h3>
-                <p>Storage class defines the scope, visibility, and lifetime of a variable.</p>
+                <section id="storage" class="article-section">
+                    <h3>3. Storage Classes in C</h3>
+                    <p>Storage class defines the scope, visibility, and lifetime of a variable.</p>
 
-                <ul>
-                    <li><strong>auto</strong> – Default for local variables.
-<pre><code>void show() {
+                    <ul>
+                        <li><strong>auto</strong> – Default for local variables.
+                            <pre><code>void show() {
     auto int x = 5;
     printf("%d", x);
-}</code></pre></li>
+}</code></pre>
+                        </li>
 
-                    <li><strong>extern</strong> – Used to declare global variables across files.
-<pre><code>extern int x; // declared in another file</code></pre></li>
+                        <li><strong>extern</strong> – Used to declare global variables across files.
+                            <pre><code>extern int x; // declared in another file</code></pre>
+                        </li>
 
-                    <li><strong>register</strong> – Requests storing variable in CPU register for speed.
-<pre><code>void fastCount() {
+                        <li><strong>register</strong> – Requests storing variable in CPU register for speed.
+                            <pre><code>void fastCount() {
     register int i;
     for (i = 0; i < 100; i++) {}
-}</code></pre></li>
+}</code></pre>
+                        </li>
 
-                    <li><strong>static</strong> – Retains value between function calls.
-<pre><code>void counter() {
+                        <li><strong>static</strong> – Retains value between function calls.
+                            <pre><code>void counter() {
     static int count = 0;
     count++;
     printf("%d", count);
-}</code></pre></li>
-                </ul>
-            </section>
+}</code></pre>
+                        </li>
+                    </ul>
+                </section>
 
-            <section id="recursion" class="article-section">
-                <h3>4. Recursive Function</h3>
-                <p>A recursive function calls itself to solve a smaller problem.</p>
+                <section id="recursion" class="article-section">
+                    <h3>4. Recursive Function</h3>
+                    <p>A recursive function calls itself to solve a smaller problem.</p>
 
-                <h4>Example: Factorial of a Number</h4>
-<pre><code>int factorial(int n) {
+                    <h4>Example: Factorial of a Number</h4>
+                    <pre><code>int factorial(int n) {
     if (n == 0)
         return 1;
     else
@@ -176,14 +204,14 @@ int main() {
     printf("Factorial: %d", fact);
     return 0;
 }</code></pre>
-            </section>
+                </section>
 
-            <section id="array" class="article-section">
-                <h3>5. Passing Array to a Function</h3>
-                <p>We can pass arrays to functions by specifying the array name.</p>
+                <section id="array" class="article-section">
+                    <h3>5. Passing Array to a Function</h3>
+                    <p>We can pass arrays to functions by specifying the array name.</p>
 
-                <h4>Example: Print Elements of Array</h4>
-<pre><code>void printArray(int arr[], int size) {
+                    <h4>Example: Print Elements of Array</h4>
+                    <pre><code>void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
@@ -194,12 +222,231 @@ int main() {
     printArray(nums, 5);
     return 0;
 }</code></pre>
-            </section>
-        </article>
+                </section>
+                </article>
+        </div>
+
+        <!-- FUNCTIONS -->
+        <section id="functions" class="article-section">
+            <h3>Functions</h3>
+            <div class="article-content">
+                <h4>Introduction and Syntax</h4>
+                <p>A function in C is a block of code that performs a specific task. Functions help in modular
+                    programming, reusability, and better debugging.</p>
+                <pre><code>returnType functionName(parameters) {
+   // body of the function
+}</code></pre>
+
+                <h4>Purpose & Advantages</h4>
+                <ul>
+                    <li>Code reusability</li>
+                    <li>Simplifies debugging and testing</li>
+                    <li>Improves program structure</li>
+                </ul>
+
+                <h4>Components of a Function</h4>
+                <ul>
+                    <li>Function Prototype</li>
+                    <li>Function Definition</li>
+                    <li>Function Call</li>
+                    <li>Return Statement</li>
+                </ul>
+
+                <h4>Types</h4>
+                <p><b>Library Functions:</b> Predefined functions like <code>printf()</code>,
+                    <code>scanf()</code>.
+                </p>
+                <p><b>User Defined Functions:</b> Functions written by the programmer.</p>
+
+                <h4>Passing Arguments</h4>
+                <ul>
+                    <li>Call by Value</li>
+                    <li>Call by Reference</li>
+                </ul>
+
+                <h4>Variable Scope</h4>
+                <ul>
+                    <li><b>Local:</b> Declared inside functions</li>
+                    <li><b>Global:</b> Declared outside functions</li>
+                </ul>
+
+                <h4>Storage Classes</h4>
+                <ul>
+                    <li>Automatic</li>
+                    <li>External</li>
+                    <li>Static</li>
+                    <li>Register</li>
+                </ul>
+
+                <h4>Function with Array Example</h4>
+                <pre><code>void display(int arr[], int n) {
+   for(int i=0; i&lt;n; i++)
+      printf("%d ", arr[i]);
+}</code></pre>
+
+                <h4>Recursive Function</h4>
+                <pre><code>int factorial(int n) {
+   if(n==0) return 1;
+   return n * factorial(n-1);
+}</code></pre>
+
+                <p><b>Advantages:</b> Reduces code length, helps with problems like factorial, Fibonacci.</p>
+                <p><b>Disadvantages:</b> Uses more memory (stack calls), may cause stack overflow.</p>
+            </div>
+        </section>
+
+        <!-- STRUCTURE & UNION -->
+        <section id="structure" class="article-section">
+            <h3>Structure and Union</h3>
+            <div class="article-content">
+                <h4>Structure</h4>
+                <p>A <b>structure</b> in C groups variables of different data types under a single name.</p>
+                <pre><code>struct Student {
+   int id;
+   char name[20];
+   float marks;
+};</code></pre>
+
+                <h4>Structure Size</h4>
+                <p>The size depends on padding and alignment rules of the compiler.</p>
+
+                <h4>Accessing Members</h4>
+                <pre><code>struct Student s1;
+s1.id = 1;
+strcpy(s1.name, "John");
+printf("%d %s", s1.id, s1.name);</code></pre>
+
+                <h4>Nested Structure</h4>
+                <pre><code>struct Address {
+   char city[20];
+   int pin;
+};
+struct Student {
+   char name[20];
+   struct Address addr;
+};</code></pre>
+
+                <h4>Array of Structures</h4>
+                <pre><code>struct Student students[10];</code></pre>
+
+                <h4>Passing Structure to Function</h4>
+                <pre><code>void printStudent(struct Student s) {
+   printf("%s %d", s.name, s.id);
+}</code></pre>
+
+                <h4>Union</h4>
+                <p>A <b>union</b> allows storing different data types in the same memory location.</p>
+                <pre><code>union Data {
+   int i;
+   float f;
+   char str[20];
+};</code></pre>
+
+                <h4>Comparison</h4>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Structure</th>
+                        <th>Union</th>
+                    </tr>
+                    <tr>
+                        <td>Allocates memory for all members</td>
+                        <td>Shares memory for all members</td>
+                    </tr>
+                    <tr>
+                        <td>All members can be used at once</td>
+                        <td>Only one member at a time</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- POINTERS -->
+        <section id="pointers" class="article-section">
+            <h3>Pointers</h3>
+            <div class="article-content">
+                <h4>Introduction</h4>
+                <p>A pointer is a variable that stores the address of another variable.</p>
+                <pre><code>int *ptr, a=10;
+ptr = &a;</code></pre>
+
+                <h4>Pointer and Function</h4>
+                <pre><code>void update(int *n) {
+   *n = *n + 10;
+}</code></pre>
+
+                <h4>Call by Reference</h4>
+                <p>Pointers are used to implement call by reference.</p>
+                <pre><code>update(&a);</code></pre>
+
+                <h4>Pointer with Arrays</h4>
+                <pre><code>int arr[3] = {1,2,3};
+int *p = arr;
+printf("%d", *(p+1)); // 2</code></pre>
+
+                <p><b>Advantages:</b> Dynamic memory allocation, faster execution.</p>
+                <p><b>Disadvantages:</b> Complex, risk of segmentation fault.</p>
+            </div>
+        </section>
+
+        <!-- FILE HANDLING -->
+        <section id="file-handling" class="article-section">
+            <h3>File Handling</h3>
+            <div class="article-content">
+                <h4>Concept</h4>
+                <p>Files are used to store data permanently. File handling in C provides mechanisms for
+                    sequential and random access.</p>
+
+                <h4>File Handling Functions</h4>
+                <ul>
+                    <li><code>fopen(), fclose()</code> – open/close file</li>
+                    <li><code>getc(), putc()</code> – read/write character</li>
+                    <li><code>fprintf(), fscanf()</code> – formatted I/O</li>
+                    <li><code>getw(), putw()</code> – read/write integer</li>
+                    <li><code>fgets(), fputs()</code> – read/write string</li>
+                    <li><code>fread(), fwrite()</code> – block I/O</li>
+                    <li><code>remove(), rename()</code> – delete/rename file</li>
+                </ul>
+
+                <h4>Random Access Functions</h4>
+                <ul>
+                    <li><code>fseek()</code> – move file pointer</li>
+                    <li><code>rewind()</code> – reset pointer</li>
+                    <li><code>ftell()</code> – get current position</li>
+                </ul>
+
+                <h4>File Modes</h4>
+                <ul>
+                    <li><b>r / r+</b> – read</li>
+                    <li><b>w / w+</b> – write</li>
+                    <li><b>a / a+</b> – append</li>
+                </ul>
+
+                <h4>Steps</h4>
+                <ul>
+                    <li>Define File Pointer</li>
+                    <li>Open File</li>
+                    <li>Read/Write/Append</li>
+                    <li>Close File</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TYPEDEF -->
+        <section id="typedef" class="article-section">
+            <h3>Typedef</h3>
+            <div class="article-content">
+                <p>The <b>typedef</b> keyword is used to create an alias for data types.</p>
+                <pre><code>typedef unsigned int uint;
+uint x = 5;</code></pre>
+            </div>
+        </section>
+        </section>
     </div>
+
     <footer class="newspaper-footer">
-    <p>© 2025 DAILY SCIENCE CHRONICLE | COMPUTER SCIENCE - XII | ALL RIGHTS RESERVED</p>
-    <p>EDUCATIONAL PURPOSE ONLY</p>
-</footer>
+        <p>&copy; 2025 Daily Science Chronicle | Computer Science Edition</p>
+    </footer>
+    </div>
 </body>
+
 </html>
